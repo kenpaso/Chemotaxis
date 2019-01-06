@@ -28,7 +28,7 @@
 
  		textSize(50);
  		fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
- 		text("code is art",117,100);
+ 		text("code is art",122,100);
  
  	}	
 
