@@ -1,7 +1,8 @@
  //declare bacteria variables here   
  Bacteria rock;
  Bacteria [] colony;
- 
+ PImage photo;
+
  void setup()   
  {     
  	size(500,500);
@@ -13,10 +14,24 @@
  	{
  		colony[i] = new Bacteria();
  	}   
+
+ 	photo = loadImage("monalisa.png");
  }   
  void draw()   
  {   
  	background(0); 
+
+ 	if(mousePressed == true)
+ 	{
+ 		background(255,255,255);
+ 		image(photo, 75, 130);
+
+ 		textSize(50);
+ 		fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+ 		text("code is art",117,100);
+ 
+ 	}	
+
  	//move and show the bacteria   
  	rock.move();
  	rock.show();
@@ -44,11 +59,8 @@
  		if(mousePressed == true)
  		{
  			theX = theX +((int)(Math.random()*81)-40);
- 			theY = theY +((int)(Math.random()*81)-40);
- 			textSize(50);
- 			fill(255);
- 			text("ART",210,400);
- 			
+ 			theY = theY +((int)(Math.random()*81)-40);	
+ 			theColor = color(255,255,255);		
  		}	
  		else
  		{
@@ -69,6 +81,7 @@
 
 	 		theX = theX +((int)(Math.random()*7)-aX);
 	 		theY = theY +((int)(Math.random()*7)-aY);
+	 		theColor = color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
 	 	}
  	}
 
